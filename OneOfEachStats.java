@@ -18,19 +18,19 @@ public class OneOfEachStats {
 		int num2Children = 0;
 		int num3Children = 0;
 		int numManyChildren =0;
-		for (int i = 1;i < T ;i++) {
+		for (int i = 1;i <= T ;i++) {
 			boolean girl = false; //at list one girl
 			boolean boy = false; //at list one girl
 			int numChildren = 0;
 			while (girl == false || boy == false) {
 				double result = generator.nextDouble();
-				// System.out.println(result);
 				if (result > 0.5) {
 					girl = true;
 					numChildren += 1;
 				} else {
 					boy = true;
 					numChildren += 1;
+				}
 				}
 				if (numChildren == 2) {
 					num2Children += 1;
@@ -39,7 +39,7 @@ public class OneOfEachStats {
 				}else if (numChildren > 3) {
 					numManyChildren += 1;
 					}
-				}
+				
 				sumChildren += numChildren;
 			}
 		double avreage = sumChildren/ T;
